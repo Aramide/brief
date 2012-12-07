@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/jquery.mobile-1.2.0.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/Site.min.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="js/jstorage/jstorage.min.js" type="text/javascript"></script>
+    <script src="app/DataContext.js" type="text/javascript"></script>
+    <script src="app/Controller.js" type="text/javascript"></script>
+    <script src="app/NoteModel.js" type="text/javascript"></script>
+    <script src="js/jquery.mobile-1.2.0.min.js" type="text/javascript"></script>
+
+<style>
+.ui-bar-f {
+  background-color: #799407;
+  padding: 4px 0px;
+  border-bottom: 6px solid #C8B934;
+}
+</style>
+ 
+       
+ </head>
+
+<body>
+    <!--Notes List page-->
+    <div data-role="page" id="notes-list-page" data-title="My Notes">
+    <div data-role="header" data-position="fixed" data-theme="f" data-content-theme="f">
+
+        <a href="app.html" data-theme="e" data-content-theme="e" data-icon="info" data-prefetch="true" data-ajax="false" data-transition="slide" class="ui-btn-left">
+                                CHECKLISTS
+                            </a>
+            <h1>
+                </h1>
+               
+ 
+            <a href="#note-editor-page" class="ui-btn-right" data-theme="e" data-content-theme="e" data-icon="plus">New</a>
+        </div>
+        
+        <div data-role="content" id="notes-list-content" class="mvv-light-green" data-content-theme="f">
+        </div>
+    </div>
+    <!--Note Editor page-->
+    <div data-role="page" id="note-editor-page" data-title="Edit Note" data-theme="f" data-content-theme="f">
+        <div data-role="header" data-position="fixed" data-theme="e" data-content-theme="e">
+            <a href="#notes-list-page" data-icon="back" data-rel="back" data-theme="e" data-content-theme="e">Cancel</a>
+            <h1>
+                Edit Note</h1>
+            <a id="save-note-button" href="" data-theme="e" data-content-theme="e" data-icon="check">Save</a>
+        </div>
+        <div data-role="content">
+            <form action="" method="post" id="note-editor-form">
+            <label for="note-title-editor">
+                Title:</label>
+            <input type="text" name="note-title-editor" id="note-title-editor" value="" />
+            <label for="note-narrative-editor">
+                Narrative:</label>
+            <textarea name="note-narrative-editor" id="note-narrative-editor"></textarea>
+            </form>
+        </div>
+        <div data-role="footer" data-position="fixed" class="ui-bar" data-theme="e" data-content-theme="e">
+            <a id="delete-note-button" data-icon="delete" data-transition="slideup" data-rel="dialog" data-theme="f">Delete</a>
+        </div>
+    </div>
+    <!--Invalid Note dialog-->
+    <div id="invalid-note-dialog" data-role="dialog" data-title="Invalid Note" data-theme="e" data-content-theme="e">
+        <div data-role="header" data-theme="c">
+            <h1>Wait!</h1>
+        </div>
+        <div data-role="content">
+            <p>Enter a title for this note.</p>
+        </div>
+    </div>
+    <!-- Confirm Delete Note dialog-->
+    <div id="confirm-delete-note-dialog" data-role="dialog" data-title="Delete Note" >
+        <div data-role="header">
+        <h1>
+                Delete Note?</h1>
+        </div>
+        <div data-role="content">            
+            <div id="delete-note-content-placeholder"></div>
+            <a id="cancel-delete-note-button" data-role="button" data-theme="a" data-rel="back">No</a>
+            <a id="ok-to-delete-note-button" data-role="button" data-theme="a">Yes</a>
+        </div>
+        
+    </div>
+</body>
+</html>
